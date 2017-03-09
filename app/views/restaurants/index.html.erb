@@ -1,0 +1,42 @@
+    <div class="card-description">
+    <h1> Restaurants in Paris</h1>
+  </div>
+
+
+
+
+
+<!-- <div class="container">
+  <div class="card">
+    <div class="row">
+      <% @restaurants.each do |resto| %>
+        <div class="col-xs-6">
+          <h3><%= resto.name %></h3>
+          <li><%= resto.category %></li>
+          <li><%= resto.address %></li>
+          <li><%= resto.phone_number %></li>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-12 col-sm-6 col-md-3" id="user">
+        <%= link_to restaurant_path(restaurant) do %>
+          <div class="card">
+            <h2><%= restaurant.name %></h2>
+            <p><%=  restaurant.category.upcase %></p>
+            <p><%= restaurant.address %></p>
+            <p><%= restaurant.phone_number %></p>
+            <p><%= "----------" %></p>
+            <p><%= restaurant.reviews.count %> reviews</p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
